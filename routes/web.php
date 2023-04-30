@@ -19,11 +19,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes(["register" => false]);
-
-Route::resource('routes', RouteController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('routes');
-Route::resource('tollbooths', TollboothController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('tollbooths');
-Route::resource('units', UnitController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('units');
-Route::resource('fuels', FuelController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('fuels');
-
-Route::view('/generar-presupuesto', 'generarPresupuesto')->name('generarPresupuesto');
-

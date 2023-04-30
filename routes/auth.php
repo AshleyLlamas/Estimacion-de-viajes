@@ -10,7 +10,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //CATALOGOS:
-Route::resource('routes', RouteController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.routes');
-Route::resource('tollbooths', TollboothController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.tollbooths');
-Route::resource('units', UnitController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.units');
-Route::resource('fuels', FuelController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.fuels');
+
+Route::resource('routes', RouteController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('routes');
+Route::resource('tollbooths', TollboothController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('tollbooths');
+Route::resource('units', UnitController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('units');
+Route::resource('fuels', FuelController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('fuels');
+
+Route::view('/generar-presupuesto', 'generarPresupuesto')->name('generarPresupuesto');
